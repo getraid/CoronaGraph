@@ -1,9 +1,9 @@
 import requests
-import json
 import numpy as np
 import matplotlib.pyplot as plt
-import re
 import datetime
+import json
+import re
 
 graphTitle = "Corona in Deutschland"
 API = "https://api.covid19api.com/country/germany"
@@ -22,8 +22,8 @@ for x in arr:
     tmpdate = x[dateKey].split("T")[0].split("-")
     d.append(datetime.date(int(tmpdate[0]), int(tmpdate[1]), int(tmpdate[2])))
 
-plt.plot(d, y, color="orange", label="Infiziert")
 plt.plot(d, g, color="red", label="Tode")
+plt.plot(d, y, color="orange", label="Infiziert")
 plt.xticks(rotation=45, ha='right')
 plt.legend(loc='best')
 plt.title(graphTitle)
